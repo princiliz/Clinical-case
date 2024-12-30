@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const sequelize = require('./config/database');
 const caseRoutes = require('./routes/cases');
-const patientRoutes = require('./routes/patients'); // Ajout des routes des patients
 require('dotenv').config();
 
 const app = express();
@@ -11,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/cases', caseRoutes);
-app.use('/patients', patientRoutes); // Ajout des routes des patients
+app.use('/patients', patientRoutes); 
 
 sequelize.sync().then(() => {
   app.listen(3000, () => {

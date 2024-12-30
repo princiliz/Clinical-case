@@ -4,11 +4,12 @@ const sequelize = require('../config/database');
 class Case extends Model {}
 
 Case.init({
+  entryDate:DataTypes.DATE,
+  exitDate:DataTypes.DATE,
+  patientId: DataTypes.UUID,
   patientAge: DataTypes.INTEGER,
   patientGender: DataTypes.STRING,
   patientOccupation: DataTypes.STRING,
-  patientAddress: DataTypes.STRING,
-  patientPhone: DataTypes.STRING, // Optionnel
   patientWeight: DataTypes.FLOAT,
   patientHeight: DataTypes.FLOAT,
   allergies: DataTypes.JSON,
