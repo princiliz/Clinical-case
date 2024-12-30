@@ -10,7 +10,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/cases', caseRoutes);
-app.use('/patients', patientRoutes); 
 
 sequelize.sync().then(() => {
   app.listen(3000, () => {
